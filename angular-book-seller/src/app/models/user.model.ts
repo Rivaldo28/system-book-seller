@@ -1,10 +1,14 @@
 import { Role } from "../enum/role.enum";
 
 export class User {
-  id: number | undefined;
-  username: string = "";
-  password: string = "";
-  name: string = "";
-  token: string = "";
-  role: Role = Role.USER;
+  id!: number;
+  username!: string;
+  password!: string;
+  name!: string;
+  token!: string;
+
+  // CORREÇÃO DEFINITIVA:
+  // A propriedade 'role' agora é do tipo 'Role', permitindo que ela seja
+  // tanto ADMIN quanto USER, sem um valor padrão que restrinja o tipo.
+  role!: Role;
 }

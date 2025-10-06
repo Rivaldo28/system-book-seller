@@ -1,0 +1,95 @@
+<!-- Spinner de Carregamento -->
+<div *ngIf="loading" class="loading-overlay">
+  <app-spinner></app-spinner>
+</div>
+<div class="dashboard-container p-4">
+  <h1 class="dashboard-title mb-4">Dashboard de Vendas</h1>
+
+  <!-- Cards de Métricas -->
+  <div class="row mb-4">
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="metric-card total-sales-card">
+        <div class="metric-card-header">
+          <i class="fas fa-dollar-sign metric-icon"></i>
+          <h5 class="metric-title">Total de Vendas</h5>
+        </div>
+        <div class="metric-card-body">
+          <p class="metric-value">{{ statistics.total_vendas | currency:'BRL' }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="metric-card total-orders-card">
+        <div class="metric-card-header">
+          <i class="fas fa-shopping-cart metric-icon"></i>
+          <h5 class="metric-title">Total de Pedidos</h5>
+        </div>
+        <div class="metric-card-body">
+          <p class="metric-value">{{ statistics.total_pedidos }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linha com Gráfico de Barras e Mais Vendidos -->
+  <div class="row">
+    <div class="col-lg-8 mb-4">
+      <div class="chart-card h-100">
+        <div class="chart-card-header">
+          <h4 class="chart-title">Top 10 Livros Mais Vendidos</h4>
+        </div>
+        <div class="chart-card-body">
+          <canvas id="salesChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+      <div class="data-card h-100">
+        <div class="data-card-header">
+          <h4 class="data-card-title">Livros Mais Vendidos</h4>
+        </div>
+        <div class="data-card-body">
+          <div class="table-responsive">
+            <table class="table data-table mb-0">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th class="text-end">Vendas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let book of bestSellers">
+                  <td>{{ book.title }}</td>
+                  <td class="text-end">{{ book.unitsSold }}</td>
+                </tr>
+                <tr *ngIf="!loading && bestSellers.length === 0">
+                  <td colspan="2" class="text-center p-3">Nenhum livro vendido.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linha para o Gráfico de Pizza -->
+  <div class="row">
+    <!-- Adicionada a classe customizada 'pie-chart-container' -->
+    <div class="col-lg-6 mb-4 pie-chart-container">
+      <div class="chart-card h-100">
+        <div class="chart-card-header">
+          <h4 class="chart-title">Distribuição de Vendas (Top 5)</h4>
+        </div>
+        <div class="chart-card-body d-flex justify-content-center align-items-center">
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensagem de Erro -->
+  <div *ngIf="error" class="alert alert-danger mt-4">
+    <strong>Erro:</strong> {{ error }}
+  </div>
+</div>

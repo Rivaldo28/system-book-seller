@@ -10,7 +10,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Menu de Navegação Unificado e Inteligente -->
+      <!-- Menu de Navegação -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a routerLink="/" fragment="destaques" class="nav-link">Destaques</a>
@@ -21,8 +21,15 @@
         <li class="nav-item">
           <a [routerLink]="['/livros']" routerLinkActive="active" class="nav-link">Livros</a>
         </li>
-        <li class="nav-item" *ngIf="isAdmin()">
-          <a [routerLink]="['/admin']" routerLinkActive="active" class="nav-link">Administrador</a>
+        <!-- Dropdown de Administração visível apenas para admins -->
+        <li class="nav-item dropdown" *ngIf="isAdmin()">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAdmin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Administração
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownAdmin">
+            <li><a class="dropdown-item" [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/admin']" routerLinkActive="active">Gerenciar Livros</a></li>
+          </ul>
         </li>
       </ul>
 

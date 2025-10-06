@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './components/admin/admin/admin.component';
 import { BookFormComponent } from './components/admin/admin/form/book-form.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component'; // Importa o DashboardComponent
 import { NotFoundComponent } from './components/error/not-found/not-found.component';
 import { UnauthorizedComponent } from './components/error/unauthorized/unauthorized.component';
 import { HomeComponent } from './components/guest/home/home.component';
@@ -22,6 +23,12 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthGuard],
     data: { roles: [Role.ADMIN, Role.USER] },
+  },
+  {
+    path: 'dashboard', // ROTA ADICIONADA AQUI
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN] },
   },
   {
     path: 'admin',

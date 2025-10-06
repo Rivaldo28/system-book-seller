@@ -1,0 +1,116 @@
+/* --- Layout e Carregamento --- */
+.dashboard-container {
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  position: relative;
+}
+
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* --- Cards de Métricas --- */
+.metric-card {
+  border-radius: 12px;
+  color: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.total-sales-card {
+  background: linear-gradient(45deg, #2980b9, #3498db);
+}
+
+.total-orders-card {
+  background: linear-gradient(45deg, #8e44ad, #9b59b6);
+}
+
+.metric-card-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.metric-icon {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  opacity: 0.8;
+}
+
+.metric-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: right;
+}
+
+/* --- Card do Gráfico e da Tabela --- */
+.chart-card,
+.data-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.chart-card-header,
+.data-card-header {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.chart-title,
+.data-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.chart-card-body {
+    padding: 1rem;
+}
+
+.data-card-body {
+  padding: 0;
+}
+
+.data-table {
+  margin-bottom: 0;
+}
+
+.data-table thead th {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #34495e;
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: #f8f9fa;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.data-table tbody td {
+  padding: 1rem 1.5rem;
+  vertical-align: middle;
+  font-size: 0.95rem;
+  color: #555;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* REGRA CORRIGIDA E FORÇADA PARA O GRÁFICO DE PIZZA */
+.pie-chart-container {
+  margin-top:   50px !important;
+}

@@ -58,9 +58,11 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/api/authentication/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/book", "/api/book/image/**", "/api/book/report/pdf").permitAll()
-                // ATENÇÃO: A linha abaixo permite que QUALQUER um edite ou delete livros para restaurar a funcionalidade.
-                // Para produção, o ideal seria: .antMatchers("/api/book/**").hasRole(Role.ADMIN.name())
                 .antMatchers("/api/book/**").permitAll()
+
+                // REGRA FINAL E CORRETA: Permite que apenas ADMINS acessem QUALQUER endpoint do dashboard
+                .antMatchers("/api/dashboard/**").hasRole(Role.ADMIN.name())
+
                 .antMatchers("/api/internal/**").hasRole(Role.SYSTEM_MANAGER.name())
                 .anyRequest().authenticated();
 
@@ -83,6 +85,8 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
+        // ATENÇÃO: Para produção, é mais seguro especificar a URL do seu frontend
+        // em vez de "*", por exemplo: Arrays.asList("http://localhost:4200")
         configuration.setAllowedOrigins(Arrays.asList("*"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
