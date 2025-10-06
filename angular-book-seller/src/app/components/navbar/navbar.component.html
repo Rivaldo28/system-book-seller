@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a [routerLink]="['/']" class="navbar-brand ms-1 test">
+      <img width="40" alt="Angular Logo" src="../../../assets/book.png" class="logoImg animate__animated animate__bounceIn infinite"/>
+      RivaBook
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Menu de Navegação Unificado e Inteligente -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="/" fragment="destaques" class="nav-link">Destaques</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/" fragment="depoimentos" class="nav-link">Depoimentos</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/livros']" routerLinkActive="active" class="nav-link">Livros</a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a [routerLink]="['/admin']" routerLinkActive="active" class="nav-link">Administrador</a>
+        </li>
+      </ul>
+
+      <!-- Links da Direita (Login/Logout) -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="!currentUser">
+        <li class="nav-item">
+          <a [routerLink]="['/register']" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-user-plus"></i> Cadastra-se
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/login']" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="currentUser">
+        <li class="nav-item">
+          <a [routerLink]="['/profile']" routerLinkActive="active" class="nav-link">
+            {{currentUser?.name}}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a (click)="createLogoutBook()" class="nav-link exit" title="Sair" style="cursor: pointer;">
+            <i class="fas fa-regular fa-right-from-bracket"></i> Sair
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<app-logout></app-logout>

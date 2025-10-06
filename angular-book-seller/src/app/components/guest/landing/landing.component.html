@@ -1,0 +1,121 @@
+ 1. Hero Carousel Section
+<section id="destaques">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators/Points -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <!-- Slides -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1887&auto=format&fit=crop');">
+          <div class="hero-overlay">
+            <div class="container text-center">
+              <h1 class="display-3 neon-text-title">Onde Cada Página é um Novo Universo</h1>
+              <p class="lead my-4">Sua próxima obsessão literária está a um clique de distância. Mergulhe em futuros distópicos e aventuras intergalácticas.</p>
+              <a [routerLink]="['/livros']" class="btn btn-neon btn-lg">Acessar o Acervo <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1887&auto=format&fit=crop');">
+          <div class="hero-overlay">
+            <div class="container text-center">
+              <h1 class="display-3 neon-text-title">Clássicos Reimaginados</h1>
+              <p class="lead my-4">Edições raras e capas exclusivas que você não encontrará em nenhum outro sistema.</p>
+              <a [routerLink]="['/livros']" class="btn btn-neon btn-lg">Explorar Coleção</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Controls/Arrows -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<div class="page-content">
+
+
+  <!-- 3. Testimonials Carousel -->
+  <section id="depoimentos" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center section-title">O que nossos leitores dizem</h2>
+      <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Testimonial 1 -->
+          <div class="carousel-item active">
+            <div class="testimonial-card-light">
+              <p class="testimonial-text">"A melhor seleção de livros que já encontrei online. A entrega foi super rápida e a experiência do site é fantástica. Recomendo a todos os amantes de livros!"</p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana S.">
+                <span>Ana S.</span>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="carousel-item">
+            <div class="testimonial-card-light">
+              <p class="testimonial-text">"Encontrei um livro raro que procurava há anos. A RivaBook é incrível! O catálogo é vasto e o sistema de busca é muito eficiente. Virei cliente fiel."</p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos M.">
+                <span>Carlos M.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- 4. Footer -->
+<footer class="footer-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>RivaBook</h5>
+        <p class="text-muted">Sua jornada literária começa aqui. Explore, descubra e apaixone-se por novas histórias.</p>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h5>Navegue</h5>
+        <ul class="list-unstyled">
+          <li><a routerLink="/" class="footer-link">Início</a></li>
+          <li><a [routerLink]="['/livros']" class="footer-link">Livros</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h5>Conta</h5>
+        <ul class="list-unstyled">
+          <li><a [routerLink]="['/login']" class="footer-link">Login</a></li>
+          <li><a [routerLink]="['/profile']" class="footer-link">Meu Perfil</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3 text-md-end">
+        <h5>Siga-nos</h5>
+        <a href="#" class="footer-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="footer-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="text-center pt-3 mt-3 border-top">
+      <p class="text-muted small">&copy; 2025 RivaBook. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>

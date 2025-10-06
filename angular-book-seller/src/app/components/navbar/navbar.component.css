@@ -1,0 +1,14 @@
+.exit {
+  cursor: pointer;
+}
+
+.logoImg {
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+}
+
+.container-fluid {
+  margin: auto;
+  text-align: center;
+}

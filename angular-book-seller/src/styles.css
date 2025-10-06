@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Poppins:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Train+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.content-area {
+  padding-top: 80px; /* Increased value to ensure enough space for the navbar */
+}
+
+.test {
+  font-family: 'Marck Script', cursive;
+  font-size: 1.7rem; /* Adjusted for navbar */
+}
+
+.headerColor {
+  background-color: #4B79A1;
+  left: 0;
+  margin: 0;
+}
+
+.h5Color {
+  color: #FFF;
+}
+
+.loading {
+  background-color: rgb(0, 0, 0, 0.5) !important;
+  position: fixed;
+  margin: auto !important;
+  z-index: 1000 !important;
+  width: 100%;
+}
+
+/* Print-specific styles */
+@media print {
+  /* Esconde tudo que não queremos imprimir */
+  app-navbar,
+  .btn,
+  .input-group,
+  nav[aria-label="Page navigation"],
+  app-deletebook {
+    display: none !important;
+  }
+
+  /* Garante que a área do relatório ocupe toda a página */
+  .testClass,
+  .card {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Remove o padding do container principal na impressão */
+  .container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Garante que o corpo da página não tenha padding na impressão */
+  body {
+    padding-top: 0 !important;
+  }
+}

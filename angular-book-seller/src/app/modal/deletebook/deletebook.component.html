@@ -1,0 +1,18 @@
+  <!-- Modal -->
+<div class="modal fade" id="showModalDeleteBook" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  h-100 d-flex flex-column justify-content-center my-0">
+    <div class="modal-content">
+      <div class="modal-header headerColor">
+        <h5 class="modal-title h5Color" id="exampleModalLabel">Alerta</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que deseja deletar a consultar?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deletebook()" >Apagar</button>
+      </div>
+    </div>
+  </div>
+</div>

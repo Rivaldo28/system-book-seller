@@ -1,0 +1,53 @@
+:host {
+  height: 100vh;
+  display: flex;
+  background-color: #f7f9fa;
+  z-index: 1000 !important;
+}
+
+.btn1 {
+  color: #4B79A1;
+}
+
+.btn2 {
+  color: #a51b0b;
+}
+
+.add {
+  background-color: #4B79A1;
+  color: #FFF
+}
+
+.add:hover {
+  background-color: #a51b0b;
+  color: #FFF;
+}
+
+.icon {
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+}
+
+.iconPulse {
+  font-size: 18px;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+}
+
+.searchInput {
+  width: 450px;
+}
+
+.btnCSV {
+  width: 50px;
+  background-color: #4B79A1;
+  color: #FFF;
+  margin-left: 5px;
+}
+
+.btnCSV:hover {
+  background-color: #a51b0b;
+  color: #FFF;
+}

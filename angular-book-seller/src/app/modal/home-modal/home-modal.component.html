@@ -1,0 +1,34 @@
+<div class="modal fade" id="showModalPurchase" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header headerColor">
+                <h5 class="modal-title h5Color" id="exampleModalLabel">Detalhes do Livro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img [src]="'http://localhost:5000/api/book/image/'+book.id" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{book.title}}</h5>
+                                <p class="card-text">{{book.description}}</p>
+                                <p class="card-text"><small class="text-muted">{{book.author}}</small></p>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    De <s>{{book.price | currency: 'BRL'}}</s> por {{book.discount_price | currency: 'BRL'}}
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger icon-close" data-bs-dismiss="modal"><i class="fas fa-times"></i>
+                  Sair</button>
+                <button type="button" class="btn btn-primary icon-purchase" (click)="purhcase()"><i class="fas fa-cart-plus animate__animated animate__wobble infinite"></i>Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>

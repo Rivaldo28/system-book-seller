@@ -1,0 +1,129 @@
+<div class="modal fade" id="bookModal" tabIndex="1">
+  <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0">
+    <div class="modal-content">
+      <form #f="ngForm" (ngSubmit)="f.form.touched && saveBook()" enctype="multipart/form-data">
+
+        <div class="modal-header headerColor">
+          <h5 class="modal-title h5Color">Livro detalhes</h5>
+          <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="alert alert-danger" *ngIf="errorMessage">
+           <strong>Erro!</strong> {{errorMessage}}
+          </div>
+
+          <div class="form-group">
+            <label for="formFileSm" class="form-label">Imagem do Livro</label>
+          <input
+          type="file"
+          class="form-control form-control-sm"
+          id="fileSelected"
+          name="fileSelected"
+          accept="image/*"
+          (change)="handleUpload($event)"
+           required/>
+            <span class="text-danger"
+            *ngIf="!book.fileSelected && f.submitted">
+              O <strong>Imagem</strong> do livro é obrigatório.
+          </span>
+          </div>
+
+
+          <div class="form-group">
+            <label for="title">Titulo</label>
+            <input
+              type="text"
+              id="title"
+              class="form-control"
+              name="title"
+              [(ngModel)]="book.title"
+              #title="ngModel"
+              required
+              />
+            <span class="text-danger"
+            *ngIf="!title.valid && f.submitted ">
+              O <strong>título</strong> do livro é obrigatório.
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="title">Tipo</label>
+            <input
+              type="text"
+              id="typeBook"
+              class="form-control"
+              name="typeBook"
+              [(ngModel)]="book.typeBook"
+              #typeBook="ngModel"
+              required
+              />
+            <span class="text-danger"
+            *ngIf="!typeBook.valid && f.submitted ">
+              O <strong>tipo</strong> do livro é obrigatório.
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="author">Autor</label>
+            <input
+              type="text"
+              id="author"
+              class="form-control"
+              name="author"
+              [(ngModel)]="book.author"
+              #author="ngModel"
+              required
+              />
+            <span class="text-danger" *ngIf="!author.valid && f.submitted">
+              O autor do livro é obrigatório.
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="price">Preço</label>
+            <input
+              type="number"
+              id="price"
+              class="form-control"
+              name="price"
+              [(ngModel)]="book.price"
+              #price="ngModel"
+              required
+              />
+            <span class="text-danger" *ngIf="(!price.valid || book.price <= 0) && f.submitted">
+              O preço é obrigatório e deve ser maior que 0.
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Descrição</label>
+            <textarea
+              type="text"
+              id="description"
+              class="form-control"
+              name="description"
+              [(ngModel)]="book.description"
+              #description="ngModel"
+              required
+              ></textarea>
+              <span class="text-danger" *ngIf="!description.valid && f.submitted">
+                A descrição do livro é obrigatório.
+            </span>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+          <button class="btn btn-primary" type="submit">Salvar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  {{f.form.touched}}
+{{f.form.dirty }}
+{{f.form.invalid }}
+</div>

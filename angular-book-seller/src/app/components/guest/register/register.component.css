@@ -1,0 +1,72 @@
+:host {
+  height: 130vh;
+  display: block;
+  background: #4B79A1;
+  background: -webkit-linear-gradient(to right, #283E51, #4B79A1);
+  background: linear-gradient(to right, #283E51, #4B79A1);
+  border: 1px solid #4B79A1;
+}
+
+.register {
+  margin-top: 75px !important;
+}
+
+.custom-card {
+  width: 350px;
+  max-width: 100%;
+  background-color: #f7f9fa;
+}
+
+.user-icon {
+  font-size: 90px;
+  animation: userColor 5s infinite alternate;
+}
+
+@keyframes userColor {
+  0% {
+    color: #a51b0b;
+  }
+
+  100% {
+    color: #4B79A1;
+  }
+}
+
+a {
+  color: darkgray;
+}
+
+span {
+  font-size: 13px;
+}
+
+.button {
+  animation: buttonColor 5s infinite alternate;
+}
+
+@keyframes buttonColor {
+  0% {
+    background: #a51b0b;
+  }
+
+  100% {
+    background: #4B79A1;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: #283E51;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+}
+
+.link:hover {
+  color: #a51b0b;
+}
+
+p {
+  color: #283E51;
+  font-size: 12px;
+}

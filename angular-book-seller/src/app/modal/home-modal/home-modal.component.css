@@ -1,0 +1,46 @@
+img {
+  width: 120px;
+  height: 180px;
+  margin: auto;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center !important;
+}
+
+.h5Style {
+  font-size: 22px;
+  font-weight: bold;
+  display: flex !important;
+  margin: auto !important;
+  text-align: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+h6 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: center;
+  color: red !important;
+}
+
+.iconPulse {
+  font-size: 18px;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+}
+
+.icon-purchase i{
+  margin-right:  5px;
+}
+
+ i {
+   animation-duration: 3s;
+   animation-delay: 5s;
+   animation-iteration-count: infinite;
+ }
+
