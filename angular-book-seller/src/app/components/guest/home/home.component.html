@@ -8,8 +8,8 @@
     <div *ngIf="bookPage">
       <div class="row g-4">
         <div *ngFor="let item of bookPage.content" class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch">
-          <!-- A classe do card foi mantida para herdar os estilos corretos -->
           <div class="card book-card-dark h-100">
+            <!-- NOVO: Container da imagem para controlar o fundo e o alinhamento -->
             <div class="book-card-image-wrapper">
               <img [src]="'http://localhost:5000/api/book/image/'+item.id" class="card-img-top" alt="Capa do livro {{item.title}}">
             </div>
@@ -17,7 +17,7 @@
               <h5 class="card-title">{{item.title}}</h5>
               <p class="card-text text-muted">{{item.author}}</p>
               <h6 class="card-subtitle mb-2 price-text">
-                De <s>{{item.price | currency: 'BRL'}}</s> por <span class="text-cyan">{{item.discount_price | currency: 'BRL'}}</span>
+                De <s>{{item.price | currency: 'BRL'}}</s>, por <span class="text-cyan">{{item.discount_price | currency: 'BRL'}}</span>
               </h6>
             </div>
             <div class="card-footer">
